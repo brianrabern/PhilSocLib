@@ -4,7 +4,6 @@ from libraryapp.models import Book
 
 with open('books.csv', newline='') as file:
     raw_data = csv.reader(file)
-
     table=list(raw_data)
 
 

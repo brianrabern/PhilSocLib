@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from models import Book
+from libraryapp.models import Book
 
 
 def book_list(request):

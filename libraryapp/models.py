@@ -11,3 +11,6 @@ class Book(models.Model):
     inventory = models.CharField(max_length =50)
     language = models.CharField(max_length =100)
     notes = models.TextField(null=True)
+
+    def __str__(self):
+        return self.call_number
