@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} search {% endblock title %}
+
+{% block content %}
+
+<h1> "{{searched}}"</h1>
+
+
+<table class ="styled-table">
+    <thead>
+      <tr>
+        <th> Number </th>
+        <th> Title </th>
+        <th> Author </th>
+        <th> Year </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for book in books %}
+      <tr>
+        <td> {{book.call_number}} </td>
+        <td> {{book.title}} </td>
+        <td> {{book.author}} </td>
+        <td> {{book.year}} </td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+</table>
+{% endblock content %}

@@ -12,7 +12,11 @@
   <body>
     <header>
 <nav>
-
+<form method=POST action={% url 'search' %}>
+  {%csrf_token%}
+  <input type="search"  placeholder="search" aria-label="Search" name="searched">
+  <button type="submit">Search</button>
+</form>
 </nav>
 
     </header>
