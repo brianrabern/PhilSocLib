@@ -1,3 +1,65 @@
+header{
+    color:white;
+    background-color: #139b53;
+    padding: 1em 1em;
+    margin-bottom: 30px;
+}
+
+.headimg {
+    border-radius: 50%;
+    height:200px;
+    width:200px;
+  }
+a {
+
+    color: #139b53;
+    padding: 1em 1.5em;
+  }
+.heada{
+    color:#dfe6e0;
+}
+h4 a{
+    padding: 0em;
+}
+h3 a{
+    padding: 0em;
+}
+
+li a{
+    padding: 0em;
+}
+
+a:hover {
+    color: hotpink;
+  }
+
+  .header img {
+    float: left;
+    width: 150px;
+    height: 150px;
+
+  }
+
+  .header h1 {
+    position: relative;
+    top: 18px;
+    left: 20px;
+  }
+
+  .header h3 {
+    position: relative;
+    left: 20px;
+  }
+
+  .header p {
+    position: relative;
+    left: 20px;
+  }
+
+
+.my-input:focus { outline-color: #139b53; }
+
+
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -7,7 +69,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
-    background-color: #009879;
+    background-color: #314d40;
     color: #ffffff;
     text-align: left;
 }
@@ -22,14 +84,65 @@
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #dfe6e0;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #b6d59b;
 }
 
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    color: #b6d59b;
 }
+
+footer {
+    background-color: #139b53;
+    height: 60px;
+    padding: 5px 15px;
+    font-size: 12px;
+    color: white;
+    margin-top: 50px;
+  }
+
+
+
+  .row {
+    display: flex;
+  }
+
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  .card {
+    /* Add shadows to create the "card" effect */
+    background-color: #cfd79b;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+
+  }
+
+
+
+  /* Add some padding inside the card container */
+  .container {
+    padding: 20px;
+  }
+
+.card1 {
+    /* Add shadows to create the "card" effect */
+    background-color: #dfe6e0;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+
+  }
+
+
+
+  /* Add some padding inside the card container */
+.container1 {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }

@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block title %} {{ book.title }} {% endblock title %}
+
+
+
+{% block content %}
+
+
+ <div>
+<div class="card">
+  <div class="container">
+    <h2><b>{{ book.title}}</b></h2>
+    <h4> by {{ book.author }}</h4>
+  <ul>
+    <li>Year published: {{ book.year}} </li>
+    <li>Publisher: {{ book.publisher}} </li>
+    <li>ISBN: {{ book.isbn}}</li>
+    <li>Language: {{ book.language}} </li>
+    <li>Copies: {{ book.inventory}} </li>
+    {%if book.notes%}
+    <li>Notes: {{ book.notes}} </li>
+    {%endif%}
+    <li>Find on <a style href="https://www.google.com/search?tbm=bks&q={{book.title}}">google books </a> </li>
+
+  </ul>
+</div>
+</div>
+
+<br>
+<p><a style href="{% url 'list' %}">Back to collection</a>  </p>
+<p><a style href="{% url 'home' %}">Back home</a>  </p>
+{% endblock content %}

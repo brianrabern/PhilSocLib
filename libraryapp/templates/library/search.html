@@ -8,26 +8,27 @@
 
 
 <table class ="styled-table">
-    <thead>
-      <tr>
-        <th> Number </th>
-        <th> Title </th>
-        <th> Author </th>
-        <th> Year </th>
-      </tr>
-    </thead>
+  <thead>
+    <tr>
+      <th> Number </th>
+      <th> Title </th>
+      <th> Author </th>
+      <th> Year </th>
+    </tr>
+  </thead>
 
-    <tbody>
+  <tbody>
 
-      {% for book in books %}
-      <tr>
-        <td> {{book.call_number}} </td>
-        <td> {{book.title}} </td>
-        <td> {{book.author}} </td>
-        <td> {{book.year}} </td>
-      </tr>
-      {% endfor %}
+    {% for book in books %}
+    <tr>
+      <td> <a href="{% url 'details' book.id %}"> {{book.call_number}} </a>  </td>
+      <td> {{book.title}} </td>
+      <td> {{book.author}} </td>
+      <td> {{book.year}} </td>
 
-    </tbody>
+    </tr>
+    {% endfor %}
+
+  </tbody>
 </table>
 {% endblock content %}
