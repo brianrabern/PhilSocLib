@@ -11,6 +11,16 @@ class Book(models.Model):
     inventory = models.CharField(max_length =50)
     language = models.CharField(max_length =100)
     notes = models.TextField(null=True)
+    available=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.call_number
+        return self.title
+
+class Borrow(models.Model):
+    date=models.DateTimeField(auto_now_add = True)
+    borrower_name=models.CharField(max_length =50)
+    borrower_email=models.EmailField(max_length=50)
+    book=models.ForeignKey(
+        Book,
+        related_name="book",
+        on_delete=models.CASCADE)

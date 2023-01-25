@@ -1,6 +1,23 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect
 from libraryapp.models import Book
 from django.db.models import Q
+from libraryapp.forms import BorrowForm
+
+
+def checkout(request,id):
+    book = get_object_or_404(Book, id=id)
+    if request.method == "POST":
+        form = BorrowForm(request.POST,initial={"book": book})
+        if form.is_valid():
+            borrow = form.save(False)
+            borrow.save()
+            return redirect('list')
+    else:
+        form=BorrowForm(initial={"book": book})
+        #
+    context = {"form": form, "book": book}
+    return render(request, "library/checkout.html", context)
+
 
 
 def contact(request):
