@@ -9,10 +9,11 @@ class Book(models.Model):
     year = models.CharField(max_length =50)
     publisher = models.CharField(max_length =100)
     isbn = models.CharField(max_length =100)
-    inventory = models.CharField(max_length =50)
+    inventory = models.SmallIntegerField()
+    available = models.SmallIntegerField()
     language = models.CharField(max_length =100)
     notes = models.TextField(null=True)
-    available=models.BooleanField(default=True)
+
 
     def __str__(self):
         return self.title

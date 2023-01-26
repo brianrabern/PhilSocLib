@@ -17,7 +17,8 @@
     <li>Publisher: {{ book.publisher}} </li>
     <li>ISBN: {{ book.isbn}}</li>
     <li>Language: {{ book.language}} </li>
-    <li>Copies: {{ book.inventory}} </li>
+    <li>Copies owned: {{ book.inventory}} </li>
+    <li>Copies available: {{ book.available}} </li>
     {%if book.notes%}
     <li>Notes: {{ book.notes}} </li>
     {%endif%}
@@ -29,7 +30,11 @@
   </ul>
 
 </div>
+{%if book.available %}
 <div id="check"><button  onclick="location.href = '{% url 'checkout' book.id %}'">Check Out</button></div>
+{%else%}
+<div id="check">All copies of this item are checked out</div>
+{%endif%}
 </div>
 
 <br>

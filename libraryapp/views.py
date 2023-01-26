@@ -17,6 +17,8 @@ def checkout(request,id):
     if request.method == "POST":
         form = BorrowForm(request.POST,initial={"book": book})
         if form.is_valid():
+            book.available -= 1
+            book.save()
             borrow = form.save(False)
             borrow.save()
             return redirect('confirm',borrow.id)

@@ -2,7 +2,7 @@ from plibrary.wsgi import *
 import csv
 from libraryapp.models import Book
 
-with open('books.csv', newline='') as file:
+with open('books3.csv', newline='') as file:
     raw_data = csv.reader(file)
     table=list(raw_data)
 
@@ -16,6 +16,7 @@ with open('books.csv', newline='') as file:
             publisher = table[i][4],
             isbn = table[i][5],
             inventory = table[i][6],
+            available= table[i][6],
             language = table[i][7],
             notes = table[i][8],
             )
