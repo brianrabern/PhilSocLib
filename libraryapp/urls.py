@@ -1,5 +1,5 @@
 from django.urls import path
-from libraryapp.views import book_list, search, book_detail,checkout, home_view, contact
+from libraryapp.views import book_list, search, book_detail,checkout, home_view, contact,confirm
 
 urlpatterns = [
     path('home/', home_view, name ="home"),
@@ -7,5 +7,6 @@ urlpatterns = [
     path('list/',book_list, name="list"),
     path('search/', search, name ="search"),
     path('details/<int:id>/', book_detail, name ="details"),
-    path('checkout/<int:id>/', checkout, name ="checkout")
+    path('checkout/<int:id>/', checkout, name ="checkout"),
+    path('confirm/<int:id>/', confirm, name ="confirm"),
 ]

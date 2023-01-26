@@ -14,7 +14,8 @@
     <header>
 
       <div class="header">
-        <p align="right"><a class="heada" style href="{% url 'home' %}">Home</a><a class="heada"  style href="{% url 'list' %}">Collection</a><a class="heada"  style href="{% url 'contact' %}">Contact</a></p>
+        <button class="hbut"  onclick="location.href = '{% url 'contact' %}'">Contact</button>  <button class="hbut"  onclick="location.href = '{% url 'list' %}'">Collection</button> <button class="hbut" onclick="location.href = '{% url 'home'%}'">Home</button>
+        {% comment %} <p align="right"><a class="heada" style href="{% url 'home' %}">Home</a><a class="heada"  style href="{% url 'list' %}">Collection</a><a class="heada"  style href="{% url 'contact' %}">Contact</a></p> {% endcomment %}
         <img class="headimg" src="https://pbs.twimg.com/profile_images/1372636102549471236/tb9NPbI6_400x400.jpg" alt="logo" />
         <h1>Cross-Coursier Library</h1>
         <h3>University of Edinburgh :: Philosophy Society </h3>
@@ -24,9 +25,9 @@
       </div>
 
       <nav align="right">
-        <form method=POST action={% url 'search' %}>
+        <form  method=POST action={% url 'search' %}>
           {%csrf_token%}
-          <input class="my-input" type="search"  autofocus placeholder="search library" aria-label="Search" name="searched">
+          <input  class="my-input" type="search"  autofocus placeholder="search library" aria-label="Search" name="searched">
           <button type="submit">Search</button>
         </form>
         </nav>

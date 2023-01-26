@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Confirmation
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="card">
+    <div class="container">
+<h3> You checked out:</h3>
+        <h2><b>{{ borrow.book.title}}</b></h2>
+        <h4> by {{ borrow.book.author }}</h4>
+<ul>
+    <li>Name: {{borrow.borrower_name}}</li>
+    <li>Email: {{borrow.borrower_email}}</li>
+    <li>Date: {{borrow.checked_out}}</li>
+
+</ul>
+</div>
+</div>
+{% endblock content %}

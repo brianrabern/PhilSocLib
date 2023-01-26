@@ -1,7 +1,15 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from libraryapp.models import Book
+from libraryapp.models import Book, Borrow
 from django.db.models import Q
 from libraryapp.forms import BorrowForm
+
+def confirm(request,id):
+    borrow = Borrow.objects.get(id=id)
+
+    # borrow = get_object_or_404(Borrow)
+    context = {"borrow": borrow}
+    return render(request, "library/confirm.html", context)
+
 
 
 def checkout(request,id):
@@ -11,7 +19,7 @@ def checkout(request,id):
         if form.is_valid():
             borrow = form.save(False)
             borrow.save()
-            return redirect('list')
+            return redirect('confirm',borrow.id)
     else:
         form=BorrowForm(initial={"book": book})
         #
@@ -41,6 +49,7 @@ def search(request):
         return render(request,'library/search.html', context)
     else:
         return render(request,'library/search.html', {})
+
 
 
 def book_detail(request,id):

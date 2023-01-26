@@ -7,4 +7,4 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(Borrow)
 class BorrowAdmin(admin.ModelAdmin):
-    list_display =("borrower_name", "book")
+        list_display =("borrower_name", "book","checked_out")

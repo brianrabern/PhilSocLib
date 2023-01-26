@@ -13,10 +13,11 @@ header{
 a {
 
     color: #139b53;
-    padding: 1em 1.5em;
+
   }
-.heada{
-    color:#dfe6e0;
+.hbut{
+  float: right;
+  margin: 2px;
 }
 h4 a{
     padding: 0em;
@@ -57,7 +58,13 @@ a:hover {
   }
 
 
-.my-input:focus { outline-color: #139b53; }
+form input{
+  padding: 0.2em;
+  border: 1px solid hotpink;
+  border-radius: 3px;
+  font-size: 1em;
+}
+form input:focus { outline-color: #139b53; }
 
 
 .styled-table {
@@ -146,3 +153,34 @@ footer {
     padding-bottom: 30px;
     padding-left: 30px;
   }
+
+#check{
+  margin-left:60px;
+  padding-bottom: 20px;
+}
+
+#conf{
+  margin-left:145px;
+
+}
+
+button {
+  padding: 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #484538;
+  background-color: #dfe6e0;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 1px 2px #999;
+}
+
+button:hover {background-color: hotpink}
+
+button:active {
+  background-color:#b6d59b;
+  box-shadow: 0 5px #666;
+  transform: translateY(1px);
+}

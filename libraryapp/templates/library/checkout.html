@@ -1,18 +1,21 @@
-
-
 {% extends 'base.html' %}
 {% block title %}
 Checkout
 {% endblock title %}
 
 {% block content %}
-<div>
-<h1>Checkout {{book.title}}</h1>
-<form method="post">
+
+
+<div class="card">
+    <div class="container">
+
+        <h2><b>{{ book.title}}</b></h2>
+        <h4> by {{ book.author }}</h4>
+<form class="my-form" method="post" autocomplete="off">
   {% csrf_token %}
   {{ form.as_p }}
-  <button>Confirm Checkout</button>
+  <button id="conf">Confirm Checkout</button>
 </form>
-
+</div>
 </div>
 {% endblock content %}

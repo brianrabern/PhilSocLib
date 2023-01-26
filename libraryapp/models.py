@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Book(models.Model):
@@ -17,7 +18,7 @@ class Book(models.Model):
         return self.title
 
 class Borrow(models.Model):
-    date=models.DateTimeField(auto_now_add = True)
+    checked_out=models.DateTimeField(auto_now_add = True)
     borrower_name=models.CharField(max_length =50)
     borrower_email=models.EmailField(max_length=50)
     book=models.ForeignKey(

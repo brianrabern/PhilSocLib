@@ -22,16 +22,16 @@
     <li>Notes: {{ book.notes}} </li>
     {%endif%}
     <li>Find on <a style href="https://www.google.com/search?tbm=bks&q={{book.title}}">google books </a> </li>
+    <li>{{ book.available|yesno:"Available,Not Available"}}</li>
 
 
 
   </ul>
- <div align="right"> {{ book.available|yesno:"Available,Not Available"}}</div>
+
 </div>
-<div align="right"><button  onclick="location.href = '{% url 'checkout' book.id %}'">Check Out</button></div>
+<div id="check"><button  onclick="location.href = '{% url 'checkout' book.id %}'">Check Out</button></div>
 </div>
 
 <br>
-<p><a style href="{% url 'list' %}">Back to collection</a>  </p>
-<p><a style href="{% url 'home' %}">Back home</a>  </p>
+
 {% endblock content %}
