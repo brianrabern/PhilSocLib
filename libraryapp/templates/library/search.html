@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} search {% endblock title %}
+{% block title %} Search results {% endblock title %}
 
 {% block content %}
 {%if books.count%}
@@ -25,7 +25,6 @@
       <td> <a href="{% url 'details' book.id %}"> {{book.title}} </a>   </td>
       <td> {{book.author}} </td>
       <td> {{book.year}} </td>
-
     </tr>
     {% endfor %}
 

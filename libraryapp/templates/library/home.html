@@ -1,61 +1,94 @@
-{% extends 'base.html'%}
-
-{% block title %} {{ book.title }} {% endblock title %}
-
-
-
+{% extends 'base.html'%} {% block title %} {{ book.title }} {% endblock title %}
 {% block content %}
 <div class="card1">
-    <div class="container1">
-<h3>The Philosophy Society maintains a small library, known as the Cross-Coursier Library,
-    housed at 40 George Square in room 9.10.</h3>
+  <div class="container1">
+    <h3>
+      The Philosophy Society maintains a small library, known as the
+      Cross-Coursier Library, housed at 40 George Square in room 9.10.
+    </h3>
 
-    <h3>The library is intended for anyone and everyone, society members and non-members alike.
-    This means that anyone can borrow books from the library, we do then ask that you fill out an online borrowing card. There is no set loan period, but please don't steal from us.</h3>
+    <h3>
+      The library is intended for anyone and everyone, society members and
+      non-members alike. This means that anyone can borrow books from the
+      library, we do then ask that you fill out an online borrowing card. There
+      is no set loan period, but please don't steal from us.
+    </h3>
 
-    <h3>Click <a style href="{% url 'list' %}">here</a> browse the entire collection.</h3></div></div>
- <br>
+    <h3>
+      Click <a style href="{% url 'list' %}">here</a> browse the entire
+      collection.
+    </h3>
+  </div>
+</div>
+<br />
 
-    <div class="row">
-        <div class="column">
-          <img src="https://www.euphilsoc.com/wp-content/uploads/2022/09/302354657_1138729693382085_8129052893892363192_n-1024x768.jpg" alt="library" style="width:100%">
-        </div>
-        <div class="column">
-          <img src="https://www.euphilsoc.com/wp-content/uploads/2022/09/302363966_804281017369913_547447805719736526_n-1024x768.jpg" alt="books" style="width:100%">
-        </div>
-        <div class="column">
-          <img src="https://www.euphilsoc.com/wp-content/uploads/2022/09/302119768_487893693183470_3274369969805489897_n-1024x768.jpg" alt="more books" style="width:100%">
-        </div>
-      </div>
+<div class="row">
+  <div class="column">
+    <img
+      src="https://www.euphilsoc.com/wp-content/uploads/2022/09/302354657_1138729693382085_8129052893892363192_n-1024x768.jpg"
+      alt="library"
+      style="width: 100%"
+    />
+  </div>
+  <div class="column">
+    <img
+      src="https://www.euphilsoc.com/wp-content/uploads/2022/09/302363966_804281017369913_547447805719736526_n-1024x768.jpg"
+      alt="books"
+      style="width: 100%"
+    />
+  </div>
+  <div class="column">
+    <img
+      src="https://www.euphilsoc.com/wp-content/uploads/2022/09/302119768_487893693183470_3274369969805489897_n-1024x768.jpg"
+      alt="more books"
+      style="width: 100%"
+    />
+  </div>
+</div>
 
-      <br>
+<br />
 
-      <div class="card">
-        <div class="container">
-    <h4>The door requires a passcode for entry. It is open at all times that the building itself is open,
-    however the room is passcode-protected; please email the Librarian at the above address to receive the code.</h4>
+<div class="card">
+  <div class="container">
+    <h4>
+      The door requires a passcode for entry. It is open at all times that the
+      building itself is open, however the room is passcode-protected; please
+      email the Librarian at the above address to receive the code.
+    </h4>
 
+    <h4>
+      The library is intended for recreational reading and general browsing. As
+      such, our aim is for this library to contain more introductory works to
+      the field of philosophy and its various sub-fields. We also aim for it to
+      house books from local philosophers and those who have had an affiliation
+      with Edinburgh. We do of course house most major works of philosophy as
+      well as more specific works.
+    </h4>
 
-    <h4>The library is intended for recreational reading and general browsing.
-    As such, our aim is for this library to contain more introductory works to the
-    field of philosophy and its various sub-fields. We also aim for it to house books
-    from local philosophers and those who have had an affiliation with Edinburgh.
-    We do of course house most major works of philosophy as well as more specific works. </h4>
+    <h4>
+      Additionally, the library has old copies of many well-known journals
+      (Mind, for instance) stretching back to the early 1900s. We ask that you
+      do not remove these from the building without permission from the
+      librarian. They are rather old and rare.
+    </h4>
 
-    <h4>Additionally, the library has old copies of many well-known journals (Mind, for instance)
-    stretching back to the early 1900s. We ask that you do not remove these from the building
-    without permission from the librarian. They are rather old and rare. </h4>
+    <h4>
+      The Library itself was named after Mim Cross and Charlotte Coursier, both
+      former students who sadly died young. Mim was the first donor of books to
+      the Library in its current guise, while Charlotte published work in the
+      Society’s Philosophical Journal. It includes a large inheritance from the
+      former Haldane (later PPLS) Library, and a generous donation from the
+      personal collection of Ronald Hepburn (1927-2008), who worked
+      predominantly at Edinburgh University and the University of Aberdeen.
+    </h4>
 
-    <h4>The Library itself was named after Mim Cross and Charlotte Coursier,
-    both former students who sadly died young. Mim was the first donor of books to the Library in its current guise,
-    while Charlotte published work in the Society’s Philosophical Journal. It includes a large inheritance from
-    the former Haldane (later PPLS) Library, and a generous donation from the personal collection of Ronald Hepburn (1927-2008),
-    who worked predominantly at Edinburgh University and the University of Aberdeen. </h4>
-
-    <h4> If you want to find a specific book, you can search our <a style href="{% url 'list' %}">online database</a>.
-    If you have any other queries, do feel free to email or contact the librarian in some other way with any queries and we will see if we can help. </h4>
-
-    </div></div>
-
+    <h4>
+      If you want to find a specific book, you can search our
+      <a style href="{% url 'list' %}">online database</a>. If you have any
+      other queries, do feel free to email or contact the librarian in some
+      other way with any queries and we will see if we can help.
+    </h4>
+  </div>
+</div>
 
 {% endblock content %}

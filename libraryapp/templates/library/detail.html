@@ -2,41 +2,44 @@
 
 {% block title %} {{ book.title }} {% endblock title %}
 
-
-
 {% block content %}
 
-
- <div>
-<div class="card">
-  <div class="container">
-    <h2><b>{{ book.title}}</b></h2>
-    <h4> by {{ book.author }}</h4>
-  <ul>
-    <li>Year published: {{ book.year}} </li>
-    <li>Publisher: {{ book.publisher}} </li>
-    <li>ISBN: {{ book.isbn}}</li>
-    <li>Language: {{ book.language}} </li>
-    <li>Copies owned: {{ book.inventory}} </li>
-    <li>Copies available: {{ book.available}} </li>
-    {%if book.notes%}
-    <li>Notes: {{ book.notes}} </li>
+<div>
+  <div class="card">
+    <div class="container">
+      <h2><b>{{ book.title}}</b></h2>
+      <h4>by {{ book.author }}</h4>
+      <ul>
+        <li>Year published: {{ book.year}}</li>
+        <li>Publisher: {{ book.publisher}}</li>
+        <li>ISBN: {{ book.isbn}}</li>
+        <li>Language: {{ book.language}}</li>
+        <li>Copies owned: {{ book.inventory}}</li>
+        <li>Copies available: {{ book.available}}</li>
+        {%if book.notes%}
+        <li>Notes: {{ book.notes}}</li>
+        {%endif%}
+        <li>
+          Find on
+          <a style href="https://www.google.com/search?tbm=bks&q={{book.title}}"
+            >google books
+          </a>
+        </li>
+        <li>{{ book.available|yesno:"Available,Not Available"}}</li>
+      </ul>
+    </div>
+    {%if book.available %}
+    <div id="check">
+      <button onclick="location.href = '{% url 'checkout' book.id %}'">
+        Check Out
+      </button>
+    </div>
+    {%else%}
+    <div id="check">All copies of this item are checked out</div>
     {%endif%}
-    <li>Find on <a style href="https://www.google.com/search?tbm=bks&q={{book.title}}">google books </a> </li>
-    <li>{{ book.available|yesno:"Available,Not Available"}}</li>
+  </div>
+  <div><a href="{% url 'list' %}"> Back </a></div>
+  <br />
 
-
-
-  </ul>
-
+  {% endblock content %}
 </div>
-{%if book.available %}
-<div id="check"><button  onclick="location.href = '{% url 'checkout' book.id %}'">Check Out</button></div>
-{%else%}
-<div id="check">All copies of this item are checked out</div>
-{%endif%}
-</div>
-<div> <a href="{% url 'list' %}"> Back </a></div>
-<br>
-
-{% endblock content %}

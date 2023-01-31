@@ -4,9 +4,6 @@
 
 {% block content %}
 
-
-
-
 <table class ="styled-table">
     <thead>
       <tr>
@@ -25,7 +22,6 @@
         <td> <a href="{% url 'details' book.id %}"> {{book.title}} </a>   </td>
         <td> {{book.author}} </td>
         <td> {{book.year}} </td>
-
       </tr>
       {% endfor %}
 
