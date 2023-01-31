@@ -3,13 +3,14 @@ from libraryapp.models import Book, Borrow
 from django.db.models import Q
 from libraryapp.forms import BorrowForm
 
+
+
 def confirm(request,id):
     borrow = Borrow.objects.get(id=id)
 
     # borrow = get_object_or_404(Borrow)
     context = {"borrow": borrow}
     return render(request, "library/confirm.html", context)
-
 
 
 def checkout(request,id):
@@ -28,13 +29,13 @@ def checkout(request,id):
     context = {"form": form, "book": book}
     return render(request, "library/checkout.html", context)
 
-
-
 def contact(request):
     return render(request,"library/contact.html")
 
 def home_view(request):
-    return render(request,"library/home.html")
+    books = Book.objects.all()
+    context ={"books": books}
+    return render(request,"library/home.html", context)
 
 def book_list(request):
     books = Book.objects.all()
@@ -46,11 +47,10 @@ def book_list(request):
 def search(request):
     if request.method == "POST":
         searched = request.POST.get("searched")
-        books = Book.objects.filter(Q(title__contains=searched) | Q(author__contains=searched)|Q(call_number__contains=searched))
+        books = Book.objects.filter(Q(title__contains=searched) | Q(author__contains=searched)|Q(call_number__contains=searched)|Q(year__contains=searched))
         context = {'searched': searched, 'books': books}
         return render(request,'library/search.html', context)
-    else:
-        return render(request,'library/search.html', {})
+
 
 
 

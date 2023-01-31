@@ -3,8 +3,8 @@
 {% block title %} search {% endblock title %}
 
 {% block content %}
-
-<h1> "{{searched}}"</h1>
+{%if books.count%}
+<h1> Results for: "{{searched}}"</h1>
 
 
 <table class ="styled-table">
@@ -20,9 +20,9 @@
   <tbody>
 
     {% for book in books %}
-    <tr>
-      <td> <a href="{% url 'details' book.id %}"> {{book.call_number}} </a>  </td>
-      <td> {{book.title}} </td>
+    <tr class="lrow" onclick='location.href="{% url 'details' book.id %}"'>
+      <td> {{book.call_number}}   </td>
+      <td> <a href="{% url 'details' book.id %}"> {{book.title}} </a>   </td>
       <td> {{book.author}} </td>
       <td> {{book.year}} </td>
 
@@ -31,4 +31,8 @@
 
   </tbody>
 </table>
+{%else%}
+<h1>Hmm, no results for: "{{searched}}"</h1>
+<h2> Perhaps try a search with author's surname.
+{%endif%}
 {% endblock content %}

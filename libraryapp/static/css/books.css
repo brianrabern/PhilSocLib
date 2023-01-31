@@ -3,22 +3,31 @@ header{
     background-color: #139b53;
     padding: 1em 1em;
     margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .headimg {
     border-radius: 50%;
-    height:200px;
-    width:200px;
+    max-height:200px;
+    max-width:200px;
   }
 a {
 
     color: #139b53;
 
   }
+#topdiv{
+  text-align: right;
+}
+
+.footy{
+  text-align: right;
+}
 .hbut{
-  float: right;
+  /* float: right; */
   margin: 2px;
 }
+
 h4 a{
     padding: 0em;
 }
@@ -31,7 +40,7 @@ li a{
 }
 
 a:hover {
-    color: hotpink;
+    color: #ff69b4;
   }
 
   .header img {
@@ -64,7 +73,79 @@ form input{
   border-radius: 3px;
   font-size: 1em;
 }
+
 form input:focus { outline-color: #139b53; }
+
+@media (max-width: 50em){
+
+  header{
+    color:white;
+    background-color: #139b53;
+    padding: 1em 1em;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headimg {
+    border-radius: 50%;
+    max-height:200px;
+    max-width:200px;
+  }
+a {
+
+    color: #139b53;
+
+  }
+
+.hbut{
+  float: right;
+  margin: 2px;
+}
+h4 a{
+    padding: 0em;
+}
+h3 a{
+    padding: 0em;
+}
+
+li a{
+    padding: 0em;
+}
+
+a:hover {
+    color: #ff69b4;
+  }
+
+  .header img {
+    float: left;
+    width: 3em;
+    height: 3em;
+
+  }
+
+  .header h1 {
+    padding-top:2em;
+    padding-bottom:.5em;
+    font-size: 1.5em;
+    position: relative;
+    top: 18px;
+
+  }
+
+  .header h3 {
+
+    font-size: .5em;
+
+  }
+
+  .header p {
+    font-size: .5em;
+    color:#139b53;
+  }
+
+
+
+}
 
 
 .styled-table {
@@ -72,8 +153,9 @@ form input:focus { outline-color: #139b53; }
     margin: 25px 0;
     font-size: 1em;
     font-family: sans-serif;
-    min-width: 400px;
+    min-width: 100px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
 }
 .styled-table thead tr {
     background-color: #314d40;
@@ -90,8 +172,18 @@ form input:focus { outline-color: #139b53; }
     border-bottom: 1px solid #dddddd;
 }
 
+.styled-table tbody tr:hover{
+  background-color: #cfd79b;
+  cursor: pointer;
+}
+
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #dfe6e0;
+}
+
+.styled-table tbody tr:nth-of-type(even):hover{
+  background-color:#cfd79b;
+  cursor: pointer;
 }
 
 .styled-table tbody tr:last-of-type {
@@ -102,6 +194,59 @@ form input:focus { outline-color: #139b53; }
     font-weight: bold;
     color: #b6d59b;
 }
+
+
+
+
+@media (max-width: 50em){
+
+  .styled-table {
+    border-collapse: collapse;
+    font-size: .5em;
+    font-family: sans-serif;
+
+}
+.styled-table thead tr {
+    background-color: #314d40;
+    color: #ffffff;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 3em 1em;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.styled-table tbody tr:hover{
+  background-color: #cfd79b;
+  cursor: pointer;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #dfe6e0;
+}
+.styled-table tbody tr:nth-of-type(even):hover{
+  background-color: #cfd79b;
+  cursor: pointer;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #b6d59b;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #b6d59b;
+}
+
+}
+
+
+
+
+
 
 footer {
     background-color: #139b53;
@@ -145,7 +290,6 @@ footer {
   }
 
 
-
   /* Add some padding inside the card container */
 .container1 {
     padding-top: 30px;
@@ -173,7 +317,7 @@ button {
   color: #484538;
   background-color: #dfe6e0;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 1px 2px #999;
 }
 
@@ -182,5 +326,5 @@ button:hover {background-color: hotpink}
 button:active {
   background-color:#b6d59b;
   box-shadow: 0 5px #666;
-  transform: translateY(1px);
+
 }
